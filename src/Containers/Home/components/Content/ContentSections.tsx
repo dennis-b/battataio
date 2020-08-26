@@ -17,7 +17,7 @@ export const ContentSections = ({ data }) => {
                 containerStyle={{
                     content: {
                         bgColor: 'transparent',
-                        height: 400,
+                        height: 'fit-content',
                     }
                 }}
             />

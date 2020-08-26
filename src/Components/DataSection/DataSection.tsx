@@ -14,7 +14,7 @@ interface DataSectionProps {
 const defaultStyle = {
     content: {
         bgColor: 'white',
-        height: 250
+        height: '250px'
     }
 }
 
@@ -36,7 +36,7 @@ export const DataSection = (
             display='flex'
             direction='column'
             m={1}
-            height={open ? `${height}px` : '60px'}
+            height={open ? height : '60px'}
             bgColor={open && bgColor}
             open={open}
         >

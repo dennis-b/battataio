@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import { inject, observer } from "mobx-react";
 import { compose } from "recompose";
 
-import { LEFT_BAR_WIDTH } from "../styled";
+import { LEFT_BAR_WIDTH, TOP_BAR_HEIGHT } from "../styled";
 import { StContainer } from "../../../../Components";
 import { ContentHeader } from "./ContentHeader";
 import { loadData } from "../../../../Api";
 import { homeStoreSelector, WithHomeStore } from "../../HomeStore";
 import { ContentSections } from "./ContentSections";
+import { Navigation } from "./Navigation";
 
 function ContentView({ homeStore }: WithHomeStore) {
 
@@ -22,6 +23,7 @@ function ContentView({ homeStore }: WithHomeStore) {
 
     useEffect(() => {
         loadEntityData()
+        // eslint-disable-next-line
     }, [])
 
 
@@ -30,17 +32,21 @@ function ContentView({ homeStore }: WithHomeStore) {
     }
 
     const { data } = homeStore;
-
+    const height = `calc(100% - ${TOP_BAR_HEIGHT+10}px)`
+    
     return (
         <StContainer
             display='flex'
             direction='column'
-            height="`calc(100% - ${TOP_BAR_HEIGHT}px)`"
+            height={height}
             ml={`${LEFT_BAR_WIDTH}px`}
             p={2}
+            position='relative'
         >
             <ContentHeader />
             {data && <ContentSections data={data} />}
+
+            <Navigation />
         </StContainer>
     )
 }

@@ -7,7 +7,7 @@ export const ContentHeader = () => {
     return (
         <StContainer display='flex' p={1}>
             <StContainer direction='column' display='flex' align='flex-start'>
-                <StText size={AppTheme.fontSizes.large}>
+                <StText size={AppTheme.fontSizes.large} textcolor={AppTheme.colors.blueDark}>
                     Details of Change Order 1234
                 </StText>
                 <StText textcolor={AppTheme.colors.blueDark} size={AppTheme.fontSizes.medium}>

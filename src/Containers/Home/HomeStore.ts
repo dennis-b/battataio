@@ -24,7 +24,7 @@ export class HomeStore {
 
     @action
     update = ({ sectionId, itemId, val }) => {
-        const { data } = this.data.find(section => section.id == sectionId)
+        const { data } = this.data.find(section => section.id === sectionId)
         const itemData = data.find(item => item.id === itemId)
         itemData.value = val
     };

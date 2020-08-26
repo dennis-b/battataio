@@ -3,7 +3,7 @@ import { StImage } from "../../../../Components";
 import { AppImages } from "../../../../assets";
 import { StActionContainer } from "./styled";
 
-export const Actions = ({ onSave, editMode, toggleEditMode }) => {
+export const Actions = ({ onSave, editMode, onCancel, toggleEditMode }) => {
     return (
         <StActionContainer
             ml='auto'
@@ -33,7 +33,7 @@ export const Actions = ({ onSave, editMode, toggleEditMode }) => {
                             height={15}
                         />
                         <StImage
-                            onClick={toggleEditMode}
+                            onClick={onCancel}
                             src={AppImages.Close}
                             width={15}
                             height={15}

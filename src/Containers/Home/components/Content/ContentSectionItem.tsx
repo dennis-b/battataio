@@ -15,9 +15,14 @@ export const ContentSectionItemView = ({ item: { id, title, editable, value }, p
 
     const [editMode, setEditMode] = useState<boolean>(false)
     const [val, setVal] = useState(value);
-    const toggleEditMode = () => setEditMode(!editMode);
-
     const beforeChangeVal = useRef();
+    const toggleEditMode = () => {
+        const newMode = !editMode;
+        if (newMode) {
+            beforeChangeVal.current = val
+        }
+        setEditMode(newMode)
+    };
 
 
     const onChange = (e) => setVal(e.target.value)
@@ -28,7 +33,7 @@ export const ContentSectionItemView = ({ item: { id, title, editable, value }, p
     }
 
     const onCancel = () => {
-        homeStore.update({ sectionId: parentId, itemId: id, val })
+        setVal(beforeChangeVal.current)
         toggleEditMode();
     }
 
@@ -44,6 +49,7 @@ export const ContentSectionItemView = ({ item: { id, title, editable, value }, p
                 {
                     editable &&
                     <Actions
+                      onCancel={onCancel}
                       onSave={onSave}
                       toggleEditMode={toggleEditMode}
                       editMode={editMode}
@@ -62,7 +68,7 @@ export const ContentSectionItemView = ({ item: { id, title, editable, value }, p
                         editMode ?
                             <StInput mt={1} value={val} color={AppTheme.colors.white} onChange={onChange} />
                             :
-                            <StText size={'18px'} weight={600} mr={'auto'} mt={1}>
+                            <StText size={'18px'} weight={600} mr={'auto'} mt={1} textcolor={AppTheme.colors.blueDark}>
                                 {value}
                             </StText>
                     }

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { MarginCss, PaddingCss } from "./layoat";
 import { Grid, Typography } from "@material-ui/core";
+import { AppTheme } from "../assets/theme";
 
 export const Root: any = styled.div`
   position: absolute;
@@ -61,7 +62,7 @@ export const StText: any = styled(Typography)`
   ${PaddingCss};
   ${MarginCss};
   &&{
-   color : ${({ textcolor }: any) => textcolor || 'inherit'};
+   color : ${({ textcolor }: any) => textcolor || AppTheme.colors.white};
    font-size: ${({ size }: any) => size || 'inherit'};
    font-weight: ${({ weight }: any) => weight || 'inherit'};
    font-family: ${({ family }: any) => family || 'Montserrat,serif'};

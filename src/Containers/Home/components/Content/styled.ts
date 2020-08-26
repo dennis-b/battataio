@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { StContainer } from "../../../../Components";
+import { StContainer, StImage } from "../../../../Components";
 import { AppTheme } from "../../../../assets/theme";
 
 export const StActionContainer: any = styled(StContainer)`
@@ -19,4 +19,14 @@ export const StButton: any = styled.button`
   border-radius: 5px;
   cursor: pointer;
 `;
+
+export const PrevImage: any = styled(StImage)`
+  transform: rotate(180deg);
+`;
+
+export const StNavigationContainer: any = styled(StContainer)`
+  right: 20%;
+  bottom: 10%;
+`;
+
 

@@ -8,13 +8,6 @@ import { Comments } from "./Comments";
 import { Pictures } from "./Pictures";
 import { Assignments } from "./Assignments";
 
-const rightBarData = [
-
-    { name: 'Reference', }
-
-]
-
-
 export function RightBar() {
     return (
         <StContainer
@@ -52,3 +45,4 @@ export function RightBar() {
         </StContainer>
     )
 }
+

@@ -14,7 +14,7 @@ interface DataSectionProps {
 const defaultStyle = {
     content: {
         bgColor: 'white',
-        height: '250px'
+        height: '250px',
     }
 }
 

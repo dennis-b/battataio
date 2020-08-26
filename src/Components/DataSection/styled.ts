@@ -5,7 +5,6 @@ export const Root: any = styled(StContainer)`
   ;
   transition: ease-in-out all 300ms;
   border-bottom: 1px solid white;
-  border: ${({ open }: any) => open && 'solid 1px gray'};
   border-radius: ${({ open }: any) => open && '10px'};
   overflow: hidden;
 `;

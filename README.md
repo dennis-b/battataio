@@ -2,7 +2,7 @@
 Application for displaying change order page.
 
 # Demo
-[https://evening-meadow-59739.herokuapp.com/](https://evening-meadow-59739.herokuapp.com/)
+[https://jolly-jackson-85448b.netlify.app](https://jolly-jackson-85448b.netlify.app)
 
 ## Getting Started
 Make sure you have [Nodejs](https://nodejs.org/) and [Yarn](https://yarnpkg.com/)
